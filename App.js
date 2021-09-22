@@ -83,11 +83,12 @@ export default function App() {
 
   return ( 
     <View style={styles.container}>
-          <Text styles={styles.paragraph}>Breaking Bad</Text>
+          <Text style={styles.paragraph}>Breaking Bad</Text>
       <FlatList
         data={data}
         renderItem={forEachItem}
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={()=><Text style={styles.paragraphHeader}>Personagens</Text>}
       />
     </View>
   );
@@ -115,6 +116,14 @@ const styles = StyleSheet.create({
     color:'#fff',
     fontWeight:'bold',
     textShadow:'1px 1px 1px #000'
+  },
+  paragraphHeader:{
+    color:'#fff',
+    fontWeight:'bold',
+    textShadow:'1px 1px 1px #000',
+    backgroundColor: 'darkgreen',
+    margin: 12,
+    padding: 10,
   },
   tinyLogo: {
     width: 200,
